@@ -4,6 +4,7 @@
 // 3) Split the app into three widgets: App, TextControl & Text
 
 import 'package:flutter/material.dart';
+import 'package:flutter_course/text.dart';
 
 void main() => runApp(App());
 
@@ -38,14 +39,7 @@ class _AppState extends State<App> {
           margin: EdgeInsets.all(20),
           child: Column(
             children: [
-              Text(
-                _bodyText,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              MyText(_bodyText),
               RaisedButton(
                 onPressed: _changeBodyText,
                 child: Text('Click me to change the text'),
