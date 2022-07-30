@@ -5,8 +5,8 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter_course/text-control.dart';
-import 'package:flutter_course/text.dart';
+import 'package:flutter_assignment_1/text_control.dart';
+import 'package:flutter_assignment_1/text_output.dart';
 
 void main() => runApp(App());
 
@@ -41,7 +41,7 @@ class _AppState extends State<App> {
           margin: EdgeInsets.all(20),
           child: Column(
             children: [
-              MyText(_bodyText),
+              TextOutput(_bodyText),
               TextControl(_changeBodyText)
             ],
           ),

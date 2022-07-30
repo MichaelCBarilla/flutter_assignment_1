@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MyText extends StatelessWidget {
+class TextOutput extends StatelessWidget {
   final String bodyText;
 
-  const MyText(this.bodyText);
+  const TextOutput(this.bodyText);
 
   @override
   Widget build(BuildContext context) {
