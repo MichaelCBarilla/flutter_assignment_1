@@ -13,6 +13,19 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  var _bodyText = 'This is the first body text.';
+  var _firstText = true;
+
+  void _changeBodyText() {
+    setState(() {
+      _bodyText = _firstText
+          ? 'And this is the other one...'
+          : 'This is the first body text.';
+    });
+    _firstText = !_firstText;
+    return;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +33,28 @@ class _AppState extends State<App> {
         appBar: AppBar(
           title: Text('Flutter Assignment'),
         ),
-        body: Text('Some text in the body!'),
+        body: Container(
+          width: double.infinity,
+          margin: EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Text(
+                _bodyText,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              RaisedButton(
+                onPressed: _changeBodyText,
+                child: Text('Click me to change the text'),
+                textColor: Colors.white,
+                color: Colors.blue,
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
